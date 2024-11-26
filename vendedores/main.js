@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Função para listar vendedores com filtro
 async function listarVendedores(filtro = []) {
   try {
-    const response = await fetch("http://localhost:3000/vendedores");
+    const response = await fetch("https://g8-ondas-de-calor.vercel.app/api/vendedores");
     if (response.ok) {
       const vendedores = await response.json();
       const vendedoresTableBody = document.getElementById(
@@ -315,7 +315,7 @@ async function confirmarExclusao(id) {
 async function excluirVendedor(id) {
   try {
     await excluirComentariosDoVendedor(id);
-    const response = await fetch(`http://localhost:3000/vendedores/${id}`, {
+    const response = await fetch(`https://g8-ondas-de-calor.vercel.app/api/vendedores/${id}`, {
       method: "DELETE",
     });
 
@@ -412,7 +412,7 @@ async function cadastrarVendedor() {
   console.log("Dados do vendedor:", vendedor);
 
   try {
-    const response = await fetch("http://localhost:3000/vendedores", {
+    const response = await fetch("https://g8-ondas-de-calor.vercel.app/api/vendedores", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(vendedor),
