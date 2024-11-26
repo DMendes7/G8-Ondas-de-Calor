@@ -1,6 +1,6 @@
 {
     "rewrites": [
-      { "source": "/", "destination": "/telainicial/telainicial.html" },
+      { "source": "/", "destination": "/db/db.json" },
       { "source": "/api/:path*", "destination": "/api" }
     ]
   }
