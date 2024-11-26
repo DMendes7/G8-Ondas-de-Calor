@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem('usuarioLogado');
 
             // Redireciona para a tela de login
-            window.location.href = '/codigo/Login/index.html';
+            window.location.href = '/Login/index.html';
         });
     }
 

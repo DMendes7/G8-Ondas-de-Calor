@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (usuarioLogado) {
         // Cria um link para a tela do usuário
         const link = document.createElement('a');
-        link.href = "/codigo/telausuario/telausuario.html"; // URL para a tela do usuário
+        link.href = "/telausuario/telausuario.html"; // URL para a tela do usuário
         link.style.display = 'inline-block'; // Para que o link se comporte como um bloco
 
         // Cria uma imagem para o perfil do usuário

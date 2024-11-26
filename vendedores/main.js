@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     profileImage.alt = "Imagem do Usuário";
     profileImage.className = "profile-image";
     profileImage.addEventListener("click", () => {
-      window.location.href = "/codigo/telausuario/telausuario.html";
+      window.location.href = "/telausuario/telausuario.html";
     });
     const headerRight = document.querySelector(".header-right");
     headerRight.appendChild(profileImage);
@@ -170,7 +170,7 @@ function exibirDetalhesVendedor(vendedor) {
 
     if (!usuarioLogado) {
       alert("Você precisa estar logado para adicionar um comentário.");
-      window.location.href = "/codigo/Login/index.html"; // redireciona para a página de login
+      window.location.href = "/Login/index.html"; // redireciona para a página de login
     } else {
       mostrarAdicionarComentario();
     }
@@ -420,7 +420,7 @@ async function cadastrarVendedor() {
 
     if (response.ok) {
       alert("Cadastro realizado com sucesso!");
-      window.location.href = "/codigo/vendedores/listagem.html";
+      window.location.href = "/vendedores/listagem.html";
       limparFormulario();
     } else {
       alert("Erro ao cadastrar vendedor. Tente novamente.");

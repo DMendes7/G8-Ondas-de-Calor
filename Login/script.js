@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 email: email.value,
                 telefone: telefone.value,
                 senha: senha.value,
-                profileImage: "/codigo/telausuario/img/user-img/user-img.png" // Imagem padrão
+                profileImage: "/telausuario/img/user-img/user-img.png" // Imagem padrão
             };
 
             try {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cadastroForm.reset();
 
                 // Redirecionamento após o cadastro
-                window.location.href = '/codigo/telausuario/telausuario.html';
+                window.location.href = '/telausuario/telausuario.html';
             } catch (error) {
                 console.error('Erro:', error);
                 alert('Erro ao cadastrar usuário: ' + error.message);
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (usuario) {
                     alert('Login realizado com sucesso!');
                     localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-                    window.location.href = '/codigo/telausuario/telausuario.html';
+                    window.location.href = '/telausuario/telausuario.html';
                 } else {
                     alert('E-mail ou senha incorretos!');
                 }

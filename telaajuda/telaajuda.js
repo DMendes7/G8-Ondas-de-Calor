@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Adiciona um evento de clique à imagem do perfil para redirecionar para a tela do usuário
         profileImage.addEventListener('click', () => {
-            window.location.href = '/codigo/telausuario/telausuario.html';
+            window.location.href = '/telausuario/telausuario.html';
         });
 
         // Adiciona a imagem ao cabeçalho
