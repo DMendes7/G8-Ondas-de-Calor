@@ -1,24 +1,10 @@
-const jsonServer = require('json-server');
-const cors = require('cors');
-const path = require('path');
-
-// Cria o servidor
+const jsonServer = require("json-server");
 const server = jsonServer.create();
+const router = jsonServer.router("db/db.json"); // Caminho correto para o arquivo
+const middlewares = jsonServer.defaults();
 
-// Configura o caminho para o db.json
-const router = jsonServer.router(path.join(__dirname, '../db/db.json'));
-
-// Middlewares
-server.use(cors());
-server.use(jsonServer.defaults());
-
-// Configura as rotas
-server.use('/api', router);
-
-// Define a porta
-const PORT = process.env.PORT || 3001;
-
-// Inicia o servidor
-server.listen(PORT, () => {
-  console.log(`JSON Server is running on port ${PORT}`);
+server.use(middlewares);
+server.use("/api", router); // Define a rota base como /api
+server.listen(3001, () => {
+    console.log("JSON Server está rodando em http://localhost:3001");
 });
