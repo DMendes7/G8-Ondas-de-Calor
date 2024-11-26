@@ -1,7 +1,6 @@
 {
-    "rewrites": [
-      { "source": "/", "destination": "/db/db.json" },
-      { "source": "/api/:path*", "destination": "/api" }
-    ]
-  }
-  
+  "rewrites": [
+      { "source": "/api/:path*", "destination": "/db/db.json" },
+      { "source": "/", "destination": "/telainicial/telainicial.html" }
+  ]
+}
