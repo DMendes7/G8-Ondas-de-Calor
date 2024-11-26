@@ -1,8 +1,4 @@
 {
-  "name": "g8-ondas-de-calor",
-  "version": "1.0.0",
-  "description": "Aplicativo para exibição de vendedores e informações climáticas.",
-  "main": "index.js",
   "scripts": {
     "start": "json-server --watch db/db.json --port 3001",
     "vercel-start": "node api/server.js"
@@ -10,8 +6,5 @@
   "dependencies": {
     "cors": "^2.8.5",
     "json-server": "^0.17.1"
-  },
-  "devDependencies": {},
-  "author": "G8",
-  "license": "ISC"
+  }
 }
