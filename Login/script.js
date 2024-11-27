@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
 
             try {
-                const response = await fetch('https://g8-db.vercel.app/api/usuarios');
+                const response = await fetch('https://g8-db.vercel.app/usuarios');
                 if (!response.ok) {
                     throw new Error('Erro ao buscar dados do servidor');
                 }
