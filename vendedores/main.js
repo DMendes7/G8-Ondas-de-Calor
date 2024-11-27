@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Função para listar vendedores com filtro
 async function listarVendedores(filtro = []) {
   try {
-    const response = await fetch("https://g8-ondas-de-calor.vercel.app/api/vendedores");
+    const response = await fetch("https://g8-db.vercel.app/vendedores");
     if (response.ok) {
       const vendedores = await response.json();
       const vendedoresTableBody = document.getElementById(
@@ -230,7 +230,7 @@ async function salvarComentarioNoServidor(idVendedor, textoComentario) {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/comentarios", {
+    const response = await fetch("https://g8-db.vercel.app/comentarios", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -257,7 +257,7 @@ async function salvarComentarioNoServidor(idVendedor, textoComentario) {
 async function carregarComentarios(idVendedor) {
   try {
     const response = await fetch(
-      `http://localhost:3000/comentarios?vendedorId=${idVendedor}`
+      `https://g8-db.vercel.app/comentarios?vendedorId=${idVendedor}`
     );
     const comentarios = await response.json();
     const comentariosLista = document.getElementById("comentariosLista");
@@ -268,7 +268,7 @@ async function carregarComentarios(idVendedor) {
     } else {
       for (const comentario of comentarios) {
         const usuarioResponse = await fetch(
-          `http://localhost:3000/usuarios/${comentario.usuarioId}`
+          `https://g8-db.vercel.app/usuarios/${comentario.usuarioId}`
         );
         const usuario = await usuarioResponse.json();
 
@@ -315,7 +315,7 @@ async function confirmarExclusao(id) {
 async function excluirVendedor(id) {
   try {
     await excluirComentariosDoVendedor(id);
-    const response = await fetch(`https://g8-ondas-de-calor.vercel.app/api/vendedores/${id}`, {
+    const response = await fetch(`https://g8-db.vercel.app/vendedores/${id}`, {
       method: "DELETE",
     });
 
@@ -334,12 +334,12 @@ async function excluirVendedor(id) {
 async function excluirComentariosDoVendedor(vendedorId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/comentarios?vendedorId=${vendedorId}`
+      `https://g8-db.vercel.app/comentarios?vendedorId=${vendedorId}`
     );
     if (response.ok) {
       const comentarios = await response.json();
       for (let comentario of comentarios) {
-        await fetch(`http://localhost:3000/comentarios/${comentario.id}`, {
+        await fetch(`https://g8-db.vercel.app/comentarios/${comentario.id}`, {
           method: "DELETE",
         });
       }
@@ -412,7 +412,7 @@ async function cadastrarVendedor() {
   console.log("Dados do vendedor:", vendedor);
 
   try {
-    const response = await fetch("https://g8-ondas-de-calor.vercel.app/api/vendedores", {
+    const response = await fetch("https://g8-db.vercel.app/vendedores", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(vendedor),

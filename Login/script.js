@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('http://localhost:3000/usuarios', {
+                const response = await fetch('https://g8-db.vercel.app/usuarios', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
 
             try {
-                const response = await fetch('https://g8-ondas-de-calor.vercel.app/api/usuarios');
+                const response = await fetch('https://g8-db.vercel.app/api/usuarios');
                 if (!response.ok) {
                     throw new Error('Erro ao buscar dados do servidor');
                 }

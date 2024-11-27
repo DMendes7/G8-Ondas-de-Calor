@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Função para atualizar dados do usuário
     const updateUserData = async (updatedUser) => {
         try {
-            const response = await fetch(`http://localhost:3000/usuarios/${usuarioLogado.id}`, {
+            const response = await fetch(`https://g8-db.vercel.app/usuarios/${usuarioLogado.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
